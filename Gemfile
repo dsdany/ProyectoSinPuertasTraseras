@@ -15,11 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 group :production do
-	gem 'pg'
+	gem 'pg', '0.18.3'
 end
 
-group :development do
-	gem 'sqlite3'
+group :development, :test do
+	gem 'sqlite3', '1.3.10'
 end
 
 # Use jquery as the JavaScript library
