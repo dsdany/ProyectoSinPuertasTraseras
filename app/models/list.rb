@@ -8,7 +8,7 @@ class List < ActiveRecord::Base
 
 	def cant?
 		if self.cantidad == 0 or self.cantidad > 20
-			errors.add(:cantidad, " debe ser entre 1-20 artigulos")
+			errors.add(:cantidad, " debe ser entre 1-20 articulos")
 		end
 	end
 
