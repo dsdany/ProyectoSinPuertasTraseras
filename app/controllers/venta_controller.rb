@@ -1,4 +1,5 @@
 class VentaController < ApplicationController
+  before_action :authenticate_user! 
   before_action :set_ventum, only: [:show, :edit, :update, :destroy]
 
   # GET /venta

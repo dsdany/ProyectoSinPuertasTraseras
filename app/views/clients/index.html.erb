@@ -1,35 +1,58 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Clients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Ci</th>
-      <th>Name</th>
-      <th>Last</th>
-      <th>Telf</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.ci %></td>
-        <td><%= client.name %></td>
-        <td><%= client.last %></td>
-        <td><%= client.telf %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if user_signed_in? %>
 
-<br>
+    <nav class='navbar'>
+        <div class='navbar-inner'>
+            <ul class='nav'>
+                <li><%= link_to 'Nuevo Cliente', new_client_path %>
+                <%= link_to 'Ventas', venta_path %></li>
+            </ul>
+        </div>
+    </nav>
+  <h1>Lista de Clientes</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Ci</th>
+            <th>Name</th>
+            <th>Last</th>
+            <th>Telf</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<%= link_to 'New Client', new_client_path %>
-<br>
-<%= link_to 'Ventas', venta_path %>
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+              <td><%= client.ci %></td>
+              <td><%= client.name %></td>
+              <td><%= client.last %></td>
+              <td><%= client.telf %></td>
+              <td><%= link_to ' Show ', client %></td>
+              <td><%= link_to ' Edit ', edit_client_path(client) %></td>
+                <td><%= link_to ' Destroy ', client, method: :delete, data: { confirm: ' Esta Seguro que quiere borrar este Cliente? ' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+ 
+<%else%>
+    <h1>BIENVENIDO A HYPERPARTS</h1>
+    <h3>Por favor Inicie Sesion</h3>
+    <li class= "col-md">
+      <%= link_to "Iniciar sesion", new_user_session_path %>
+    </li>
+    <li class= "col-md">
+      <%= link_to "Crear sesion", new_user_registration_path %>
+    </li>
+
+
+
+
+<%end%>
+

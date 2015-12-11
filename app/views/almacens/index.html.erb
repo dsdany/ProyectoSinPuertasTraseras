@@ -1,6 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
+    <nav class='navbar'>
+        <div class='navbar-inner'>
+            <ul class='nav'>
+                <li><%= link_to 'Nuevo producto', new_almacen_path %></li>
+                <li><%= link_to 'Nueva venta por menor', new_ventum_path %></li>                
+                <li><%= link_to 'Clientes', clients_path %></li>
+            </ul>
+        </div>
+        
+    </nav>
 <h1>Almacen</h1>
+
+
 
 <table>
   <thead>
@@ -20,16 +35,14 @@
         <td><%= almacen.nom %></td>
         <td><%= almacen.costo %></td>
         <td><%= almacen.cantidad %></td>      
-        <td><%= link_to 'Editar', edit_almacen_path(almacen) %></td>
+        <td><%= link_to ' Editar ', edit_almacen_path(almacen) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'Nuevo producto', new_almacen_path %>
-<br>
-<%= link_to 'Nueva venta por menor', new_ventum_path %>
-<br>
-<%= link_to 'Clientes', clients_path %>
+
+
+
+

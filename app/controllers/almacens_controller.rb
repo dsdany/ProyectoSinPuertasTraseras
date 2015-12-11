@@ -1,4 +1,5 @@
 class AlmacensController < ApplicationController
+  before_action :authenticate_user! 
   before_action :set_almacen, only: [:show, :edit, :update, :destroy]
 
 

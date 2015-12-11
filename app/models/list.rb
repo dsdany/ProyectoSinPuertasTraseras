@@ -1,4 +1,4 @@
-class List < ActiveRecord::Base
+		class List < ActiveRecord::Base
 	belongs_to :ventum
 	before_create :add_costo 
 	after_create :modificar 

@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SisInfo2</title>
+  <title>ProyectoSegu</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
+  
+<% if user_signed_in? %>    
+        <nav class='navbar'>
+        <div class='navbar-inner'>
+            <ul class='nav'>
+            <li class= "col-md">                
+	                <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
+                 <p>   @Copy Right Sistema de Ventas de Repuestos HyperParts</p>
+                
+ 	          </li>
+            <h1> ' HYPERPARTS ' <h3> "Usted Primero" </h3> </h1>
+            </ul>
+        </div>        
+    </nav>    	
+    
+ <%end%>  
 
 <%= yield %>
-
 </body>
 </html>
+
